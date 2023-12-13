@@ -77,7 +77,22 @@ local plugins = {
       { "ss", "<Plug>(SubversiveSubstituteLine)", desc = "Substitute line" },
       { "S", "<Plug>(SubversiveSubstituteToEndOfLine)", desc = "Substitute to end of line" },
     },
+  },
 
-  }
+  {
+    'alexghergh/nvim-tmux-navigation', -- Seamless navigation between tmux panes and vim splits
+    lazy = false,
+    opts = {
+        disable_when_zoomed = true,
+        keybindings = {
+            left = '<C-h>',
+            down = '<C-j>',
+            up = '<C-k>',
+            right = '<C-l>',
+            last_active = '<C-\\>',
+            next = '<C-Space>'
+        }
+    },
+  },
 }
 return plugins

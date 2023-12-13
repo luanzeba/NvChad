@@ -1,5 +1,8 @@
 -- quick exit
 vim.api.nvim_set_keymap('n', '<leader>q', ':confirm qall<CR>', { noremap = true, silent = true })
+-- Easy zoom and rebalancing of Vim panes
+vim.api.nvim_set_keymap('n', '<leader>z', ':wincmd _<CR>:wincmd |<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>=', ':wincmd =<CR>', { noremap = true, silent = true })
 
 -- autoformat on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
@@ -19,3 +22,4 @@ if os.getenv("CODESPACES") ~= nil then
         }
     }
 end
+
