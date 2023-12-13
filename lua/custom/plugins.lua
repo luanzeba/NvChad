@@ -1,5 +1,18 @@
 local plugins = {
   {
+    'tpope/vim-sensible', -- sensible defaults
+    lazy = false,
+  },
+  {
+    'tpope/vim-unimpaired', -- pairs of handy bracket mappings
+    lazy = false,
+  },
+  {
+    'tpope/vim-repeat', -- enable repeating supported plugin maps with "."
+    lazy = false,
+  },
+
+  {
     'tpope/vim-fugitive', -- The premier Vim plugin for Git
     keys = {
       { "<leader>gg", "<cmd>Git<CR>5j", desc = "Git status" },
@@ -41,11 +54,30 @@ local plugins = {
       { "<leader>tf", "<cmd>TestVisit<CR>", desc = "Visit test file" },
     },
     dependencies = {
-      'preservim/vimux', -- easily interact with tmux from vim
+      'preservim/vimux', -- Easily interact with tmux from vim
     },
     config = function()
       vim.cmd([[let test#strategy = "vimux"]])
     end,
   },
+
+  {
+    'bfredl/nvim-miniyank', -- Better clipboard management
+    keys = {
+      { "p", "<Plug>(miniyank-autoput)", desc = "Paste from miniyank" },
+      { "P", "<Plug>(miniyank-autoPut)", desc = "Paste from miniyank previously" },
+      { "<leader>n", "<Plug>(miniyank-cycle)", desc = "Cycle through miniyank" },
+    },
+  },
+
+  {
+    'svermeulen/vim-subversive', -- Quick substitution operator
+    keys = {
+      { "s", "<Plug>(SubversiveSubstitute)", desc = "Substitute" },
+      { "ss", "<Plug>(SubversiveSubstituteLine)", desc = "Substitute line" },
+      { "S", "<Plug>(SubversiveSubstituteToEndOfLine)", desc = "Substitute to end of line" },
+    },
+
+  }
 }
 return plugins
