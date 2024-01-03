@@ -35,7 +35,7 @@ local plugins = {
 
   {
     'github/copilot.vim',
-    event = { "BufReadPost", "BufNewFile" },
+    lazy = false,
     config = function()
       vim.cmd([[
         imap <silent><script><expr> <M-CR> copilot#Accept("\<CR>")
