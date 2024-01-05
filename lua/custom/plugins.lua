@@ -94,5 +94,14 @@ local plugins = {
         }
     },
   },
+
+  {
+    -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more
+    'nvimtools/none-ls.nvim',
+    ft = "go",
+    config = function()
+      return require "custom.configs.null-ls"
+    end
+  }
 }
 return plugins
