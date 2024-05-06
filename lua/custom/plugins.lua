@@ -38,7 +38,7 @@ local plugins = {
     lazy = false,
     config = function()
       vim.cmd([[
-        imap <silent><script><expr> <M-CR> copilot#Accept("\<CR>")
+        imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
         let g:copilot_no_tab_map = v:true
       ]])
     end,
