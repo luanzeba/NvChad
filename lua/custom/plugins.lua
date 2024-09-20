@@ -14,6 +14,7 @@ local plugins = {
 
   {
     'tpope/vim-fugitive', -- The premier Vim plugin for Git
+    lazy = false,
     keys = {
       { "<leader>gg", "<cmd>Git<CR>5j", desc = "Git status" },
       { "<leader>gr", "<cmd>Gread<CR>", desc = "Read file from git" },
@@ -21,6 +22,7 @@ local plugins = {
   },
   {
     'tpope/vim-rhubarb', -- If fugitive.vim is the Git, rhubarb.vim is the Hub
+    lazy = false,
     keys = {
       { "<leader>gb", "<cmd>:execute line('.') . 'GBrowse'<CR>", desc = "Open current line in GitHub" },
     },
